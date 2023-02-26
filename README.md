@@ -18,7 +18,7 @@ Software and Tools required:
 3. phpMyAdmin
 4. PHP Extension
 
-Clone this repository
+Clone this repository:
 ```bash
 git clone https://github.com/norfadzilahradzi/laravel_todolist
 ```
