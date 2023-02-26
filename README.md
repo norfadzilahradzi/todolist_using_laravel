@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LARAVEL TO-DO LIST
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple TO-DO app using Laravel.
 
-## About Laravel
+## INSTRUCTION
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. To develop a simple TO-DO app using Laravel.
+2. The TO-DO list need to be saved abd loaded from database (Create a simple schema via migration).
+3. Allow user to add more into the list and update the page, appending the new record on top (Latest first).
+4. Design the user session without the need for authentication/login (End/reset the TO-DO list when browser tab is closed/re-open).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## INSTALLATION
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Software and Tools required:
 
-## Learning Laravel
+1. Visual Studio Code (Version 1.75.1 is used)
+2. Xampp (v3.3.0 is used)
+3. phpMyAdmin
+4. PHP Extension
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clone this repository
+```bash
+git clone https://github.com/norfadzilahradzi/laravel_todolist
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Go into the repository folder:
+```bash
+cd todolist
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Composer install:
+```bash
+composer install
+```
 
-## Laravel Sponsors
+Create an environmental file:
+```bash
+cp .env.example .env
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Create a database named `todolist` and run the migrations:
+```bash
+php artisan migrate
+```
 
-### Premium Partners
+Run the server using this command:
+```bash
+php artisan serve
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## OUTPUT
 
-## Contributing
+View after run:
+![image](https://user-images.githubusercontent.com/43487073/221398982-c9e6b389-43a4-49df-9d1f-aa3882b4ef3e.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Add the first task:
+![image](https://user-images.githubusercontent.com/43487073/221399038-6635c79f-1dc2-48f4-84c5-39b55416a034.png)
 
-## Code of Conduct
+Add more tasks (Latest on top):
+![image](https://user-images.githubusercontent.com/43487073/221399109-5ad7c434-4950-42fe-94e9-76c5f558837e.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Update the task once completed:
+![image](https://user-images.githubusercontent.com/43487073/221399150-6f1baed4-73e6-441d-8e8e-33085cb46936.png)
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Delete after completed:
+![image](https://user-images.githubusercontent.com/43487073/221399169-1b82e39d-1028-410c-9e1e-24a01b7e302e.png)
