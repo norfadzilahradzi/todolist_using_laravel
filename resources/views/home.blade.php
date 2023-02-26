@@ -40,6 +40,7 @@
                 <th scope="col">Task</th>
                 <th scope="col">Created At</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
                 </tr>
             </thead>
 
@@ -49,6 +50,25 @@
                 <td >{{ $todolist->content }}</td>
                 <td>{{ $todolist->created_at }}</td>
                 <td><a href="{{url('delete-task/'.$todolist->id)}}" class="btn btn-danger">Delete</a></td>
+                
+                <td>
+                    @if ($todolist->is_complete ==1)
+	                <form action="{{ route('markComplete' , $todolist->id)}}" method="POST" >
+                        @csrf
+                        @method('put')
+                        <input type="text" name="is_complete" value="1" hidden>
+                        <h6><b>Completed</b></h6>
+                    </form>
+                    @else
+                    <form action="{{ route('markComplete' , $todolist->id)}}" method="POST">
+                        @csrf
+                        @method('put')
+                        <input type="text" name="is_complete" value="0" hidden>
+                        <button type="submit" class="btn btn-success">Mark as Completed</button>
+                    </form>
+                    @endif
+                </td>
+
                 </tr>
             @endforeach
             </tbody>

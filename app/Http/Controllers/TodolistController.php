@@ -22,14 +22,23 @@ class TodolistController extends Controller
             'content' => 'required'
         ]);
 
-        Todolist::create($data);
+        Todolist::create($data);    
         return back();
+
     }
 
-    //FUNCTION TO DELETE
+    //FUNCTION TO DELETE ITEM FROM THE LIST
     public function deleteTask ($id){
         Todolist::where('id','=',$id)->delete();
         return redirect()->back()->with('success');
+    }
+
+    //FUNCTION TO UPDATE COMPLETE STATUS
+    public function markComplete ($id){
+        $todolists = Todolist::find($id);
+        $todolists->is_complete=1;
+        $todolists->save();
+        return redirect('/');
     }
 
 }
